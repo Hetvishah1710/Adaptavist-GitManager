@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -16,14 +14,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -34,7 +24,116 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
+Clone and Modify Git Repository Application 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Program Implementation Workflow 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This application provides a simple and intuitive UI to clone, modify, and push changes to a GitHub repository. The workflow is as follows: 
+
+npm run dev command to run the application 
+
+## Initial State: 
+
+The UI displays a text field for the GitHub URL. 
+
+The "Clone Repository" button is enabled. 
+
+The "Modify and Push" button is disabled. 
+
+## Validation: 
+
+If the user enters an invalid URL or leaves the field empty, an error message is displayed. 
+
+## Cloning: 
+
+If the specified cloning path already contains the project, the program replaces it with the new clone folder. 
+
+The local cloning path is /tmpGitClonePath. 
+
+## Post-Cloning: 
+
+Upon successful cloning, a text field for entering a modification message is displayed. 
+
+The "Modify and Push" button is enabled. 
+
+## Modification and Push: 
+
+The modification text field is optional. If the user provides a modification message, the program modifies a file with the provided content. 
+
+If no message is entered, a default modification message is added to the file. 
+
+The current implementation modifies the README file. 
+
+The program then commits and pushes the changes back to the original repository. 
+
+## Assumptions 
+
+GitHub credentials are managed and stored in the GitHub credential manager for cloning a GitHub URL. 
+
+For SSH URLs, the passkey is already set. 
+
+## Program Installation Steps 
+
+## Prerequisites: 
+
+Node.js installed on machine. 
+
+Git installed and configured on machine. 
+
+GitHub credentials are set to allow the program to push changes to the repository. 
+
+## Setup: 
+
+Next.js application setup. 
+
+Install the necessary packages. 
+
+## Components: 
+
+Created CloneForm.tsx component that handles the form components, including the text fields for the GitHub URL and modification message, along with their validations on the UI. 
+
+## API Routes: 
+
+Created reusable API routes Clone.ts and Push.ts to handle Git functions. 
+
+Clone.ts handles the cloning functionality after providing the GitHub URL. 
+
+Push.ts handles modification, commit, and push changes to the original repository. 
+
+Used NextApiRequest and NextApiResponse to handle Git functionalities. 
+
+## Design System 
+
+The application utilizes Material-UI for consistent and efficient UI styling. Key components and custom styling include: 
+
+Custom Styling: 
+
+Theme.ts handles custom styling. 
+
+## UI Components: 
+
+Added a logo in the navigation bar. 
+
+Used Material-UI components: 
+
+TextField 
+
+Button 
+
+Typography 
+
+Container 
+
+Box 
+
+Alert 
+
+FormControl 
+
+FormHelperText 
+
+useTheme 
+
+AppBar 
+
+Toolbar 
