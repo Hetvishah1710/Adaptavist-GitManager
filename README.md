@@ -1,0 +1,1 @@
+# Adaptavist-GitManager
