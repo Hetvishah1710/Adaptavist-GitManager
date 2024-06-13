@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
      // Commit the change
      await git.cwd(localPath)
               .add('./*')
-              .commit('Update README.md with Next.js app');
+              .commit('Update README.md with Next.js Git Manager app');
     // Push the change
     await git.cwd(localPath).push(repoUrl, 'main');
 
