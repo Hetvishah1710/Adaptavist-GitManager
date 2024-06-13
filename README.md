@@ -1,6 +1,7 @@
 ## Getting Started
-
-First, run the development server:
+clone the application 
+install required packages : npm install
+run the development server:
 
 ```bash
 npm run dev
